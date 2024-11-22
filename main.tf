@@ -8,6 +8,7 @@ module "jenkins" {
   instance_type          = "t3.small"
   vpc_security_group_ids = ["sg-08eed4ca0fd852a9e"]
   subnet_id              = "subnet-0509f144a358e12de"
+  ami = data.aws_ami.ami_info.id
   user_data = file("jenkins.sh")
 
   # Define the root volume size and type
@@ -32,6 +33,7 @@ module "jenkins_agent" {
   instance_type          = "t3.small"
   vpc_security_group_ids = ["sg-08eed4ca0fd852a9e"]
   subnet_id              = "subnet-0509f144a358e12de"
+  ami = data.aws_ami.ami_info.id
   user_data = file("jenkins-agent.sh")
 
   # Define the root volume size and type
