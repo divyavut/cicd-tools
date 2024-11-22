@@ -10,5 +10,5 @@ variable "agent_name" {
 
 variable "zone_name" {
   type = string
-  default = "divyavutakanti.com"
+  default = "dev.divyavutakanti.com"
 }
